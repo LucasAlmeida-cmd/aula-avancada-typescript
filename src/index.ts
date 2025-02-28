@@ -3,6 +3,7 @@ import { Moto } from "./interface/Moto";
 import { GerenciadorVeiculos } from "./classes/GerenciadorVeiculos";
 import { EstoqueVeiculos } from './classes/EstoqueVeiculos';
 import { FiltroVeiculos } from './utils/FiltroVeiculos';
+import { gerarRelatorio } from './utils/RelatorioVeiculos';
 
 const meuCarro: Carro = {
   marca: "Toyota",
@@ -83,3 +84,7 @@ console.log(FiltroVeiculos.filtrarPorMarca(veiculos, "Honda"));
 
 console.log("\n=== Veículos do modelo MT-07 ===");
 console.log(FiltroVeiculos.filtrarPorModelo(veiculos, "MT-07"));
+
+
+const relatorio = gerarRelatorio(veiculos);
+console.log(relatorio);
