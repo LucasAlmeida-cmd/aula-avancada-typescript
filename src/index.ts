@@ -2,7 +2,7 @@ import { Carro } from "./interface/Carro";
 import { Moto } from "./interface/Moto";
 import { GerenciadorVeiculos } from "./classes/GerenciadorVeiculos";
 import { EstoqueVeiculos } from './classes/EstoqueVeiculos';
-
+import { FiltroVeiculos } from './utils/FiltroVeiculos';
 
 const meuCarro: Carro = {
   marca: "Toyota",
@@ -64,3 +64,22 @@ estoqueMotos.removerEstoque("MT-07");
 
 
 estoqueMotos.listarEstoque();
+
+
+const veiculos = [
+  new Carro("Civic", "Honda", 2020, 2),
+  new Carro("Corolla", "Toyota", 2021,4 ),
+  new Carro("Model S", "Tesla", 2023,4),
+  new Moto("CB500", "Honda", 2022, 200),
+  new Moto("MT-07", "Yamaha", 2023, 200),
+  new Moto("Ninja 400", "Kawasaki", 2021, 200)
+];
+
+console.log("=== Veículos do ano 2023 ===");
+console.log(FiltroVeiculos.filtrarPorAno(veiculos, 2023));
+
+console.log("\n=== Veículos da marca Honda ===");
+console.log(FiltroVeiculos.filtrarPorMarca(veiculos, "Honda"));
+
+console.log("\n=== Veículos do modelo MT-07 ===");
+console.log(FiltroVeiculos.filtrarPorModelo(veiculos, "MT-07"));
